@@ -1,0 +1,25 @@
+version: "3"
+services:
+  grafana:
+    build: 
+      context: ./grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    links:
+      - influxdb
+  influxdb:
+    image: influxdb
+    volumes:
+      - "./data/influxdb/:/var/lib/influxdb"
+    environment: 
+      INFLUXDB_DB: speedtest
+      INFLUXDB_ADMIN_ENABLED: "true"
+      INFLUXDB_USER: grafana
+      INFLUXDB_PASSWORD: grafana
+  speedtest:
+    build:
+      context: ./speedtest
+    links:
+      - influxdb
+      
