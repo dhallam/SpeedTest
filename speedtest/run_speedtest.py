@@ -10,7 +10,7 @@ import speedtest
 def main():
     database_host = os.getenv('DATABASE_HOST', 'influxdb')
     database = os.getenv('DATABASE', 'speedtest')
-    sleep_seconds = int(os.getenv('POLL_EVERY_SECONDS', '5'))
+    sleep_seconds = int(os.getenv('POLL_EVERY_SECONDS', '300'))
     _servers = os.getenv('SERVERS', '')
     servers = _servers.split(',') if _servers else []
 
