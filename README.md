@@ -39,3 +39,4 @@ Customise the environment for the `speedtest` container:
 - Docker Compose (management and linking of docker containers) https://docs.docker.com/compose/
 - speedtest-cli (library to run speedtest) https://pypi.org/project/speedtest-cli/
 - InfluxDB (time series database) https://docs.influxdata.com/influxdb 
+- Grafana (visualisation of metrics and dashboards) https://grafana.com/
